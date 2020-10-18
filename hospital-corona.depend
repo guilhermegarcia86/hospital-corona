@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1603036351 source:c:\users\guilh\development\repo\hospital-corona\hospital-corona\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"user.h"
+	"patient.h"
+
+1603033969 source:c:\users\guilh\development\repo\hospital-corona\hospital-corona\user.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"user.h"
+
+1603033863 c:\users\guilh\development\repo\hospital-corona\hospital-corona\user.h
+
+1603036518 source:c:\users\guilh\development\repo\hospital-corona\hospital-corona\patient.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"patient.h"
+
+1603036004 c:\users\guilh\development\repo\hospital-corona\hospital-corona\patient.h
+
