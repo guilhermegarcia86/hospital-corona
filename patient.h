@@ -8,7 +8,9 @@ struct patient {
     char cpf[64];
     char telephone[64];
     char zip[64];
-    char birthDate[64];
+    int day;
+    int month;
+    int year;
     char comorbidity[64];
 
 };

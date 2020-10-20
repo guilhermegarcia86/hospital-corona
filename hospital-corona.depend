@@ -1,24 +1,34 @@
 # depslib dependency file v1.0
-1603036351 source:c:\users\guilh\development\repo\hospital-corona\hospital-corona\main.c
+1603038424 source:c:\users\guilh\development\repo\hospital-corona\hospital-corona\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"user.h"
 	"patient.h"
 
-1603033969 source:c:\users\guilh\development\repo\hospital-corona\hospital-corona\user.c
+1603214678 source:c:\users\guilh\development\repo\hospital-corona\hospital-corona\user.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"user.h"
 
-1603033863 c:\users\guilh\development\repo\hospital-corona\hospital-corona\user.h
+1603216687 c:\users\guilh\development\repo\hospital-corona\hospital-corona\user.h
 
-1603036518 source:c:\users\guilh\development\repo\hospital-corona\hospital-corona\patient.c
+1603226277 source:c:\users\guilh\development\repo\hospital-corona\hospital-corona\patient.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"patient.h"
+	"validator.h"
 
-1603036004 c:\users\guilh\development\repo\hospital-corona\hospital-corona\patient.h
+1603220816 c:\users\guilh\development\repo\hospital-corona\hospital-corona\patient.h
+
+1603225188 source:c:\users\guilh\development\repo\hospital-corona\hospital-corona\validator.c
+	<string.h>
+	<ctype.h>
+	<stdlib.h>
+	<time.h>
+	"validator.h"
+
+1603224942 c:\users\guilh\development\repo\hospital-corona\hospital-corona\validator.h
 

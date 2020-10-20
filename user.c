@@ -64,6 +64,8 @@ int login(){
         exit(1);
     }
 
+    //precisa ser melhorado para buscar pela struct
+
     char temp[512];
 
     while(fgets(temp, 512, f)){

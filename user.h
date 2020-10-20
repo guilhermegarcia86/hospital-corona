@@ -4,7 +4,7 @@
 struct user
 {
     char conselho[10];
-    char senha[10];
+    char pass[10];
     char fname[20];
     char lname[20];
 };
