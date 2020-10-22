@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1603038424 source:c:\users\guilh\development\repo\hospital-corona\hospital-corona\main.c
+1603406027 source:c:\users\guilh\development\repo\hospital-corona\hospital-corona\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -14,21 +14,22 @@
 
 1603216687 c:\users\guilh\development\repo\hospital-corona\hospital-corona\user.h
 
-1603226277 source:c:\users\guilh\development\repo\hospital-corona\hospital-corona\patient.c
+1603406676 source:c:\users\guilh\development\repo\hospital-corona\hospital-corona\patient.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"patient.h"
 	"validator.h"
 
-1603220816 c:\users\guilh\development\repo\hospital-corona\hospital-corona\patient.h
+1603404947 c:\users\guilh\development\repo\hospital-corona\hospital-corona\patient.h
 
-1603225188 source:c:\users\guilh\development\repo\hospital-corona\hospital-corona\validator.c
+1603404069 source:c:\users\guilh\development\repo\hospital-corona\hospital-corona\validator.c
 	<string.h>
 	<ctype.h>
 	<stdlib.h>
 	<time.h>
+	"patient.h"
 	"validator.h"
 
-1603224942 c:\users\guilh\development\repo\hospital-corona\hospital-corona\validator.h
+1603402767 c:\users\guilh\development\repo\hospital-corona\hospital-corona\validator.h
 

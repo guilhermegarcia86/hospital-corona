@@ -13,6 +13,6 @@ int validateZip(char *zipCode);
 
 int calculateAge(int year);
 
-int hasComorbidity(char *comorbidity);
+int hasComorbidity(int comorbidity);
 
 #endif

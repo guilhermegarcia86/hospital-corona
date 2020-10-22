@@ -41,39 +41,58 @@ void createPatient(){
     scanf("%d/%d/%d", &patient.day, &patient.month, &patient.year);
     age = calculateAge(patient.year);
 
-    printf("Informe comorbidades separando por ',', deixar em branco caso nao possua: ");
-    fgets(&patient.comorbidity, 64, stdin);
-    //scanf(" %100[^\n]", patient.comorbidity);
+    printf("Escolha se possui comorbidade, se possuir mais de uma selecionar (OUTROS):\n ");
+    printf("1 - NAO POSSUI\n ");
+    printf("2 - DIABETES\n ");
+    printf("3 - OBESIDADE\n ");
+    printf("4 - HIPERTENSAO\n ");
+    printf("5 - TUBERCULOSE\n ");
+    printf("6- OUTROS\n ");
+    printf("Opcao: ");
+    scanf("%d", &patient.comorbidity);
 
-    printf("Comorbidades: %s", patient.comorbidity);
-
-    scanf(" %100[^\n]", patient.comorbidity);
+    printf("Antes de entrar na validacao\n");
 
     groupRisk = (!hasComorbidity(patient.comorbidity) && (age >= 65));
+
+    printf("groupRisk %d\n", groupRisk);
+
 }
 
-void readPatient(){
+void saveGroupRisk(){
 
-    PATIENT patientReader;
-    FILE *patientFile;
+    printf("Entrou save group risk\n");
 
-    patientFile = fopen("patient.txt", "r+");
+    printf("groupRisk %d\n", groupRisk);
 
-    if(patientFile == 0){
-        printf("Banco de dados de pacientes não disponível\n\n");
-        exit(1);
+    if(groupRisk != 0){
+
+        printf("Vai salvar grupo de risco\n");
+
+        FILE *groupRiskFile;
+        GROUP risk = {patient.zip, patient.comorbidity};
+
+        groupRiskFile = fopen("groupRisk.txt", "r+");
+
+        if(groupRiskFile == 0){
+            printf("Banco de dados de pacientes de grupo de risco não disponível\n\n");
+            exit(1);
+        }
+
+        fseek(groupRiskFile, 0, SEEK_END);
+        fwrite(&risk, sizeof(GROUP), 1, groupRiskFile);
+
+        fclose(groupRiskFile);
+
+        printf("Grupo de risco cadastrado com sucesso!!!\n");
     }
 
-    while(fread(&patientReader, sizeof(PATIENT), 1, patientFile))
-        //printf ("nome = %s sobrenome = %s cpf = %s telefone = %s cep = %s data nasc = %s comorbidades = %s\n", patientReader.name, patientReader.lastname, patientReader.cpf, patientReader.telephone, patientReader.zip, patientReader.birthDate, patientReader.comorbidity);
-
-    // close file
-    fclose (patientFile);
 }
 
 int registerPatient(){
 
     createPatient();
+    saveGroupRisk();
 
     FILE *patientFile;
 
@@ -88,8 +107,6 @@ int registerPatient(){
     fwrite(&patient, sizeof(PATIENT), 1, patientFile);
 
     fclose(patientFile);
-
-    //aqui vai entrar a logica de salvar o paciente maior de 65 anos e com comorbidade
 
     printf("Paciente cadastrado com sucesso\n");
 

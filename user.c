@@ -27,6 +27,8 @@ int registerUser(){
 
     FILE *userFile;
 
+    createUser();
+
     userFile = fopen("users.txt", "r+");
 
     if(userFile == 0){

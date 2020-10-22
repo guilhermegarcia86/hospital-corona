@@ -39,13 +39,12 @@ int main(){
             if(logado != 0){
                 printf("Usuario logado \n");
                 registerPatient();
-                readPatient();
             }
             break;
         }
     case 2:
         {
-            //registrar-se
+            registerUser();
             break;
         }
     case 4:

@@ -2,6 +2,7 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include <time.h>
+#include "patient.h"
 #include "validator.h"
 
 time_t ts;
@@ -83,13 +84,37 @@ int calculateAge(int year){
 
 }
 
-int hasComorbidity(char *comorbidity){
+int hasComorbidity(int comorbidity){
 
-    int len = strlen(comorbidity);
-    if(len > 0){
-        return 0;
+    int hasComorbidity = 1;
+
+    switch(comorbidity){
+    case 1:{
+        hasComorbidity = 1;
+        break;
+    }
+    case 2:{
+        hasComorbidity = 0;
+        break;
+    }
+    case 3:{
+        hasComorbidity = 0;
+        break;
+    }
+    case 4:{
+        hasComorbidity = 0;
+        break;
+    }
+    case 5:{
+        hasComorbidity = 0;
+        break;
+    }
+    case 6:{
+        hasComorbidity = 0;
+        break;
+    }
     }
 
-    return 1;
+    return hasComorbidity;
 
 }
