@@ -49,38 +49,29 @@ void createPatient(){
     printf("5 - TUBERCULOSE\n ");
     printf("6- OUTROS\n ");
     printf("Opcao: ");
-    scanf("%d", &patient.comorbidity);
-
-    printf("Antes de entrar na validacao\n");
 
     groupRisk = (!hasComorbidity(patient.comorbidity) && (age >= 65));
-
-    printf("groupRisk %d\n", groupRisk);
 
 }
 
 void saveGroupRisk(){
-
-    printf("Entrou save group risk\n");
-
-    printf("groupRisk %d\n", groupRisk);
 
     if(groupRisk != 0){
 
         printf("Vai salvar grupo de risco\n");
 
         FILE *groupRiskFile;
-        GROUP risk = {patient.zip, patient.comorbidity};
 
         groupRiskFile = fopen("groupRisk.txt", "r+");
 
         if(groupRiskFile == 0){
-            printf("Banco de dados de pacientes de grupo de risco não disponível\n\n");
+            printf("Banco de dados de pacientes de grupo de risco nao disponivel\n\n");
             exit(1);
         }
 
         fseek(groupRiskFile, 0, SEEK_END);
-        fwrite(&risk, sizeof(GROUP), 1, groupRiskFile);
+
+        fprintf(groupRiskFile, "\n%s %s", patient.zip, patient.comorbidity);
 
         fclose(groupRiskFile);
 
@@ -99,12 +90,13 @@ int registerPatient(){
     patientFile = fopen("patient.txt", "r+");
 
     if(patientFile == 0){
-        printf("Banco de dados de pacientes não disponível\n\n");
+        printf("Banco de dados de pacientes nao disponivel\n\n");
         exit(1);
     }
 
     fseek(patientFile, 0, SEEK_END);
-    fwrite(&patient, sizeof(PATIENT), 1, patientFile);
+
+    fprintf(patientFile, "\n%s %s %s %s %s %s %d %d %d", patient.name, patient.lastname, patient.cpf, patient.telephone, patient.zip, patient.comorbidity, patient.day, patient.month, patient.year);
 
     fclose(patientFile);
 

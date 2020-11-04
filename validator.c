@@ -1,3 +1,4 @@
+#include<stdio.h>
 #include <string.h>
 #include <ctype.h>
 #include <stdlib.h>
@@ -84,11 +85,17 @@ int calculateAge(int year){
 
 }
 
-int hasComorbidity(int comorbidity){
+int hasComorbidity(char *comorbidity){
+
+    printf("entrou na validacao %s\n", comorbidity);
+
+    int c = atoi(comorbidity);
+
+    printf("valor apos atoi %d\n", c);
 
     int hasComorbidity = 1;
 
-    switch(comorbidity){
+    switch(c){
     case 1:{
         hasComorbidity = 1;
         break;

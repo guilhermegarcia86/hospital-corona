@@ -29,10 +29,10 @@ int registerUser(){
 
     createUser();
 
-    userFile = fopen("users.txt", "r+");
+    userFile = fopen("users.txt", "wb");
 
     if(userFile == 0){
-        printf("Banco de dados de usuarios nao disponível\n\n");
+        printf("Banco de dados de usuarios nao disponivel\n\n");
         exit(1);
     }
 
@@ -60,7 +60,7 @@ int login(){
     printf("Digite a senha: ");
     scanf("%s", pass);
 
-    f = fopen("users.txt", "r");
+    f = fopen("users.txt", "rb");
     if(f == 0) {
         printf("Banco de dados de users nao disponivel\n\n");
         exit(1);
@@ -68,13 +68,9 @@ int login(){
 
     //precisa ser melhorado para buscar pela struct
 
-    char temp[512];
-
-    while(fgets(temp, 512, f)){
-        if(((strstr(temp, registro)) != NULL) && (strstr(temp, pass) != NULL)){
+    while(fread(&user, sizeof(user), 1, f)){
+        if(strcmp(registro, user.conselho) == 0 && strcmp(pass, user.pass) == 0){
             encontrados++;
-            printf("Encontrou resultado %d com o registro informado \n", encontrados);
-            return;
         }
     }
 
