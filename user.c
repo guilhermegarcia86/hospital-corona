@@ -60,13 +60,11 @@ int login(){
     printf("Digite a senha: ");
     scanf("%s", pass);
 
-    f = fopen("users.txt", "rb");
+    f = fopen("users.txt", "r+");
     if(f == 0) {
         printf("Banco de dados de users nao disponivel\n\n");
         exit(1);
     }
-
-    //precisa ser melhorado para buscar pela struct
 
     while(fread(&user, sizeof(user), 1, f)){
         if(strcmp(registro, user.conselho) == 0 && strcmp(pass, user.pass) == 0){
@@ -74,12 +72,12 @@ int login(){
         }
     }
 
+    fclose(f);
+
     if(encontrados == 0){
         printf("Nao encontrou nenhum resultado com o registro informado \n");
-        //Deseja se cadastrar?
+        return;
     }
-
-    fclose(f);
 
     return encontrados;
 }

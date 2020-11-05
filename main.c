@@ -6,13 +6,15 @@
 
 int operador;
 
-void initApp() {
+void initApp()
+{
     printf("/****************/\n");
     printf("/ Hospital de Campanha */\n");
     printf("/****************/\n\n");
 }
 
-int menu(){
+int menu()
+{
 
     //pressione 1 para login ou 2 para cadastro
     printf("Menu principal\n\n");
@@ -25,32 +27,41 @@ int menu(){
     return operador;
 }
 
-int main(){
+int main()
+{
 
-    initApp();
-    int result = menu();
+    while(1)
+    {
 
-    switch(result){
+        initApp();
+        int result = menu();
 
-    case 1:
+        switch(result)
+        {
+
+        case 1:
         {
             //login
             int logado = login();
-            if(logado != 0){
+            if(logado != 0)
+            {
                 printf("Usuario logado \n");
                 registerPatient();
             }
             break;
         }
-    case 2:
+        case 2:
         {
             registerUser();
             break;
         }
-    case 4:
+        case 4:
         {
             printf("****** Sistema encerrado ******\n\n");
+            exit(1);
             break;
+        }
+
         }
 
     }

@@ -30,6 +30,21 @@ void createPatient(){
     printf("Telefone: ");
     scanf(" %100[^\n]", patient.telephone);
 
+    printf("Endereco\nRua: ");
+    scanf(" %100[^\n]", patient.street);
+
+    printf("Numero: ");
+    scanf(" %100[^\n]", patient.numberStreet);
+
+    printf("Bairro: ");
+    scanf(" %100[^\n]", patient.block);
+
+    printf("Cidade: ");
+    scanf(" %100[^\n]", patient.city);
+
+    printf("Estado: ");
+    scanf(" %100[^\n]", patient.state);
+
     printf("CEP (Apenas digitos): ");
     scanf(" %100[^\n]", patient.zip);
     if(!validateZip(patient.zip)){
@@ -41,6 +56,12 @@ void createPatient(){
     scanf("%d/%d/%d", &patient.day, &patient.month, &patient.year);
     age = calculateAge(patient.year);
 
+    printf("Email: ");
+    scanf(" %100[^\n]", patient.email);
+
+    printf("Data do diagnostico dia/mes/ano: ");
+    scanf("%d/%d/%d", &patient.dayD, &patient.monthD, &patient.yearD);
+
     printf("Escolha se possui comorbidade, se possuir mais de uma selecionar (OUTROS):\n ");
     printf("1 - NAO POSSUI\n ");
     printf("2 - DIABETES\n ");
@@ -50,6 +71,8 @@ void createPatient(){
     printf("6- OUTROS\n ");
     printf("Opcao: ");
 
+    scanf("%s", patient.comorbidity);
+
     groupRisk = (!hasComorbidity(patient.comorbidity) && (age >= 65));
 
 }
@@ -58,11 +81,9 @@ void saveGroupRisk(){
 
     if(groupRisk != 0){
 
-        printf("Vai salvar grupo de risco\n");
-
         FILE *groupRiskFile;
 
-        groupRiskFile = fopen("groupRisk.txt", "r+");
+        groupRiskFile = fopen("groupRisk.txt", "a");
 
         if(groupRiskFile == 0){
             printf("Banco de dados de pacientes de grupo de risco nao disponivel\n\n");
@@ -71,11 +92,11 @@ void saveGroupRisk(){
 
         fseek(groupRiskFile, 0, SEEK_END);
 
-        fprintf(groupRiskFile, "\n%s %s", patient.zip, patient.comorbidity);
+        fprintf(groupRiskFile, "\n%s %d", patient.zip, age);
 
         fclose(groupRiskFile);
 
-        printf("Grupo de risco cadastrado com sucesso!!!\n");
+        printf("Grupo de risco cadastrado com sucesso!\n");
     }
 
 }
@@ -87,7 +108,7 @@ int registerPatient(){
 
     FILE *patientFile;
 
-    patientFile = fopen("patient.txt", "r+");
+    patientFile = fopen("patient.txt", "a");
 
     if(patientFile == 0){
         printf("Banco de dados de pacientes nao disponivel\n\n");
@@ -96,11 +117,11 @@ int registerPatient(){
 
     fseek(patientFile, 0, SEEK_END);
 
-    fprintf(patientFile, "\n%s %s %s %s %s %s %d %d %d", patient.name, patient.lastname, patient.cpf, patient.telephone, patient.zip, patient.comorbidity, patient.day, patient.month, patient.year);
+    fprintf(patientFile, "\n%s %s %s %s %s %s %s %s %s %s %s %s %d %d %d %d %d %d", patient.name, patient.lastname, patient.cpf, patient.telephone, patient.email, patient.street, patient.numberStreet, patient.block, patient.city, patient.state, patient.zip, patient.comorbidity, patient.day, patient.month, patient.year, patient.dayD, patient.monthD, patient.yearD);
 
     fclose(patientFile);
 
-    printf("Paciente cadastrado com sucesso\n");
+    printf("Paciente cadastrado com sucesso!\n");
 
     return 0;
 }
