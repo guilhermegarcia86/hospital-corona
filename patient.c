@@ -9,7 +9,8 @@ PATIENT patient;
 int age = 0;
 int groupRisk = 0;
 
-void createPatient(){
+void createPatient()
+{
 
     printf("Informe os dados do paciente abaixo \n\n");
 
@@ -22,8 +23,15 @@ void createPatient(){
     printf("CPF: ");
     scanf(" %100[^\n]", patient.cpf);
 
-    if(!cpfIsValid(patient.cpf)){
-        printf("CPF invalido \n\n");
+    if(!cpfIsValid(patient.cpf))
+    {
+
+        printf("***************************************************************\n");
+        printf("*                                                             *\n");
+        printf("*                     CPF invalido!!!                         *\n");
+        printf("*                                                             *\n");
+        printf("***************************************************************\n");
+        sleep(1);
         exit(1);
     }
 
@@ -47,8 +55,14 @@ void createPatient(){
 
     printf("CEP (Apenas digitos): ");
     scanf(" %100[^\n]", patient.zip);
-    if(!validateZip(patient.zip)){
-        printf("Formato de CEP invalido \n\n");
+    if(!validateZip(patient.zip))
+    {
+        printf("***************************************************************\n");
+        printf("*                                                             *\n");
+        printf("*               Formato de CEP invalido!!!                    *\n");
+        printf("*                                                             *\n");
+        printf("***************************************************************\n");
+        sleep(1);
         exit(1);
     }
 
@@ -77,16 +91,24 @@ void createPatient(){
 
 }
 
-void saveGroupRisk(){
+void saveGroupRisk()
+{
 
-    if(groupRisk != 0){
+    if(groupRisk != 0)
+    {
 
         FILE *groupRiskFile;
 
         groupRiskFile = fopen("groupRisk.txt", "a");
 
-        if(groupRiskFile == 0){
-            printf("Banco de dados de pacientes de grupo de risco nao disponivel\n\n");
+        if(groupRiskFile == 0)
+        {
+            printf("***************************************************************\n");
+            printf("*                                                             *\n");
+            printf("*      Banco de dados de grupo de risco nao disponivel!!!     *\n");
+            printf("*                                                             *\n");
+            printf("***************************************************************\n");
+            sleep(1);
             exit(1);
         }
 
@@ -96,12 +118,17 @@ void saveGroupRisk(){
 
         fclose(groupRiskFile);
 
-        printf("Grupo de risco cadastrado com sucesso!\n");
+        printf("***************************************************************\n");
+        printf("*                                                             *\n");
+        printf("*          Grupo de risco cadastrado com sucesso!!!           *\n");
+        printf("*                                                             *\n");
+        printf("***************************************************************\n\n\n");
     }
 
 }
 
-int registerPatient(){
+int registerPatient()
+{
 
     createPatient();
     saveGroupRisk();
@@ -110,8 +137,14 @@ int registerPatient(){
 
     patientFile = fopen("patient.txt", "a");
 
-    if(patientFile == 0){
-        printf("Banco de dados de pacientes nao disponivel\n\n");
+    if(patientFile == 0)
+    {
+        printf("***************************************************************\n");
+        printf("*                                                             *\n");
+        printf("*        Banco de dados de pacientes nao disponivel!!!        *\n");
+        printf("*                                                             *\n");
+        printf("***************************************************************\n");
+        sleep(1);
         exit(1);
     }
 
@@ -121,7 +154,12 @@ int registerPatient(){
 
     fclose(patientFile);
 
-    printf("Paciente cadastrado com sucesso!\n");
+
+    printf("***************************************************************\n");
+    printf("*                                                             *\n");
+    printf("*            Paciente cadastrado com sucesso!!!               *\n");
+    printf("*                                                             *\n");
+    printf("***************************************************************\n\n\n");
 
     return 0;
 }
