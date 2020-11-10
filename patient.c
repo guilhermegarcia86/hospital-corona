@@ -99,7 +99,7 @@ void saveGroupRisk()
 
         FILE *groupRiskFile;
 
-        groupRiskFile = fopen("groupRisk.txt", "a");
+        groupRiskFile = fopen("groupRisk.txt", "a+");
 
         if(groupRiskFile == 0)
         {
@@ -135,7 +135,7 @@ int registerPatient()
 
     FILE *patientFile;
 
-    patientFile = fopen("patient.txt", "a");
+    patientFile = fopen("patient.txt", "a+");
 
     if(patientFile == 0)
     {

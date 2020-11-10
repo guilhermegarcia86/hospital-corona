@@ -6,7 +6,7 @@
 	"user.h"
 	"patient.h"
 
-1604967402 source:c:\users\guilh\development\repo\hospital-corona\hospital-corona\user.c
+1604967619 source:c:\users\guilh\development\repo\hospital-corona\hospital-corona\user.c
 	<stdio.h>
 	<stdlib.h>
 	<errno.h>
@@ -15,7 +15,7 @@
 
 1604960816 c:\users\guilh\development\repo\hospital-corona\hospital-corona\user.h
 
-1604967373 source:c:\users\guilh\development\repo\hospital-corona\hospital-corona\patient.c
+1604967645 source:c:\users\guilh\development\repo\hospital-corona\hospital-corona\patient.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
