@@ -106,7 +106,7 @@ int registerUser()
 
     fseek(userFile, 0, SEEK_END);
 
-    fprintf(userFile, "\n%s %s %s %s %s", user.conselho, user.pass, user.fname, user.lname);
+    fprintf(userFile, "\n%s %s %s %s", user.conselho, user.pass, user.fname, user.lname);
 
     fclose(userFile);
 
