@@ -1,5 +1,7 @@
-#ifndef _USER_H_
-#define _USER_H_
+#ifndef _PATIENT_H_
+#define _PATIENT_H_
+
+#include <windows.h>
 
 struct patient {
 

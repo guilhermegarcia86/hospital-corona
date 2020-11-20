@@ -1,6 +1,9 @@
 #ifndef _USER_H_
 #define _USER_H_
 
+#include <sys/types.h>
+#include <windows.h>
+
 struct user
 {
     char conselho[10];

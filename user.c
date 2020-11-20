@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <errno.h>
 #include <string.h>
+#include <sys/types.h>
+#include <windows.h>
+#include <conio.h>
 #include "user.h"
 
 USER user;
@@ -97,7 +100,7 @@ int registerUser()
         printf("*         Banco de dados de usuarios nao disponivel!!!        *\n");
         printf("*                                                             *\n");
         printf("***************************************************************\n");
-        sleep(1);
+        Sleep(1);
         exit(1);
     }
 
@@ -155,7 +158,7 @@ int login()
         printf("*         Banco de dados de usuarios nao disponivel!!!        *\n");
         printf("*                                                             *\n");
         printf("***************************************************************\n");
-        sleep(1);
+        Sleep(1);
         exit(1);
     }
 
@@ -178,7 +181,7 @@ int login()
         printf("*  Nao encontrou nenhum resultado com o registro informado!!! *\n");
         printf("*                                                             *\n");
         printf("***************************************************************\n\n\n");
-        sleep(1);
+        Sleep(1);
         exit(1);
     }
 

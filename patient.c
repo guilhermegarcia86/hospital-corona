@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <windows.h>
 #include "patient.h"
 #include "validator.h"
 
@@ -31,7 +32,7 @@ void createPatient()
         printf("*                     CPF invalido!!!                         *\n");
         printf("*                                                             *\n");
         printf("***************************************************************\n");
-        sleep(1);
+        Sleep(1);
         exit(1);
     }
 
@@ -62,7 +63,7 @@ void createPatient()
         printf("*               Formato de CEP invalido!!!                    *\n");
         printf("*                                                             *\n");
         printf("***************************************************************\n");
-        sleep(1);
+        Sleep(1);
         exit(1);
     }
 
@@ -108,7 +109,7 @@ void saveGroupRisk()
             printf("*      Banco de dados de grupo de risco nao disponivel!!!     *\n");
             printf("*                                                             *\n");
             printf("***************************************************************\n");
-            sleep(1);
+            Sleep(1);
             exit(1);
         }
 
@@ -144,7 +145,7 @@ int registerPatient()
         printf("*        Banco de dados de pacientes nao disponivel!!!        *\n");
         printf("*                                                             *\n");
         printf("***************************************************************\n");
-        sleep(1);
+        Sleep(1);
         exit(1);
     }
 
