@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <windows.h>
 #include "user.h"
 #include "patient.h"
 
@@ -75,7 +76,7 @@ int main()
             printf("* /____/_/____/\\__/\\___/_/ /_/ /_/\\__,_/  /_____/_/ /_/\\___/\\___/_/  /_/   \\__,_/\\__,_/\\____/          *\n");
             printf("*                                                                                                      *\n");
             printf("********************************************************************************************************\n");
-            sleep(1);
+            Sleep(1);
             exit(1);
             break;
         }

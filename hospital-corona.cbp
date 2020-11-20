@@ -42,6 +42,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="user.h" />
+		<Unit filename="validator.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="validator.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
