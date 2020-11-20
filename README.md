@@ -1,11 +1,11 @@
 # hospital-corona
 
-##Compile
+## Compile
 ```bash
 make hospital-corona
 ````
 
-##Run
+## Run
 ```bash
 hospital-corona.exe
 ```` 
